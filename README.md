@@ -13,4 +13,5 @@ Api docs: api.quran.sutanlab.id
 <br>
 Mohon maaf bila ada kesalahan.
 Terimakasih:)
+<br>
 Semoga bermanfaat:)
