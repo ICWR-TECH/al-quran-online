@@ -1,5 +1,6 @@
 <?php
 error_reporting(0);
+// defined("BASEPATH") or exit("Website maintanance!");
 function get($url){
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
@@ -17,10 +18,12 @@ $var=json_decode(get("https://api.quran.sutanlab.id/surah/"),true);
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <title>Al-qur'an</title>
-    <meta name="description" content="Qur'an">
-    <meta name="keywords" content="qur'an">
-    <meta name="author" content="Billy">
+    <title>Al-qur'an Digital</title>
+    <meta property="og:type" content="Al-Qur'an Digital" />
+    <meta property="og:title" content="Al-qur'an digital" />
+    <meta property="og:description" content="Ayat-ayat suci Al-qur'an lengkap beserta dengan audio." />
+    <meta property="og:url" content="http://www.gapenting.xyz/quran/" />
+    <meta property="og:image" content="http://www.gapenting.xyz/quran/logo.png" />
     <meta name="theme-color" content="aqua"/>
     <meta name="msapplication-navbutton-color" content="aqua"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="aqua"/>
@@ -41,15 +44,15 @@ $var=json_decode(get("https://api.quran.sutanlab.id/surah/"),true);
       <div class="col mb-4">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title"><a href="baca.php?surat=<?php echo $var['data'][$i]['number']; ?>" class="text-dark"><?php echo $var['data'][$i]['name'] ?></a></h4>
-            <h5 class="card-title"><a href="baca.php?surat=<?php echo $var['data'][$i]['number']; ?>"><?php echo $var["data"][$i]['englishName'] ?></a></h5>
+            <h4 class="card-title"><a href="baca.php?surat=<?php echo $var['data'][$i]['number']; ?>" class="text-dark"><?php echo "( ".$var['data'][$i]['name']['transliteration']['id']." )&nbsp; ".$var['data'][$i]['name']['short'] ?></a></h4>
             <p class="text-muted">
-              Diturunkan di: <strong><?php echo $var['data'][$i]['idRevelationType']; ?>.</strong>
+              Diturunkan di: <strong><?php echo $var['data'][$i]['revelation']['id']; ?>.</strong>
               <br>
-              Artinya: <strong><?php echo $var['data'][$i]['idNameTranslation'] ?>.</strong>
+              Artinya: <strong><?php echo $var['data'][$i]['name']['translation']['id'] ?>.</strong>
               <br>
-              Jumlah ayat: <strong><?php echo $var['data'][$i]['numberOfAyahs'] ?>.</strong>
+              Jumlah ayat: <strong><?php echo $var['data'][$i]['numberOfVerses'] ?>.</strong>
             </p>
+            <a class="btn btn-primary" href="baca.php?surat=<?php echo $var['data'][$i]['number']; ?>">Lihat detail...</a>
           </div>
         </div>
       </div>
