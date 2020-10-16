@@ -1,6 +1,6 @@
 <?php
 error_reporting(0);
-// defined("BASEPATH") or exit("Website maintanance!");
+include("config.php");
 function get($url){
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
