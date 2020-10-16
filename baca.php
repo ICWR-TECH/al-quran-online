@@ -1,5 +1,6 @@
 <?php
 error_reporting(0);
+include("config.php");
 function get($url){
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
@@ -33,8 +34,8 @@ $var=json_decode(get("https://api.quran.sutanlab.id/surah/".$_GET['surat']),true
     <meta property="og:type" content="Al-qur'an digital" />
     <meta property="og:title" content="Surat || <?php echo $var['data']['name']['transliteration']['id'] ?>" />
     <meta property="og:description" content="<?php echo $var['data']['tafsir']['id'] ?>" />
-    <meta property="og:url" content="http://gapenting.xyz/quran/baca.php?surat=<?php echo htmlentities($_GET['surat']) ?>" />
-    <meta property="og:image" content="http://www.gapenting.xyz/quran/logo.png" />
+    <meta property="og:url" content="<?php $site; ?>/baca.php?surat=<?php echo htmlentities($_GET['surat']) ?>" />
+    <meta property="og:image" content="logo.png" />
     <meta name="theme-color" content="aqua"/>
     <meta name="msapplication-navbutton-color" content="aqua"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="aqua"/>
@@ -42,8 +43,8 @@ $var=json_decode(get("https://api.quran.sutanlab.id/surah/".$_GET['surat']),true
     <meta property="og:type" content="Al-qur'an digital" />
     <meta property="og:title" content="404 Page Not Found" />
     <meta property="og:description" content="404 Page Not Found" />
-    <meta property="og:url" content="http://gapenting.xyz/quran/baca.php?surat=<?php echo htmlentities($_GET['surat']) ?>" />
-    <meta property="og:image" content="http://www.gapenting.xyz/quran/logo.png" />
+    <meta property="og:url" content="<?php $site; ?>/baca.php?surat=<?php echo htmlentities($_GET['surat']) ?>" />
+    <meta property="og:image" content="logo.png" />
     <meta name="theme-color" content="aqua"/>
     <meta name="msapplication-navbutton-color" content="aqua"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="aqua"/>
