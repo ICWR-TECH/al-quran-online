@@ -22,8 +22,8 @@ $var=json_decode(get("https://api.quran.sutanlab.id/surah/"),true);
     <meta property="og:type" content="Al-Qur'an Digital" />
     <meta property="og:title" content="Al-qur'an digital" />
     <meta property="og:description" content="Ayat-ayat suci Al-qur'an lengkap beserta dengan audio." />
-    <meta property="og:url" content="http://www.gapenting.xyz/quran/" />
-    <meta property="og:image" content="http://www.gapenting.xyz/quran/logo.png" />
+    <meta property="og:url" content="<?php echo $site; ?>" />
+    <meta property="og:image" content="logo.png" />
     <meta name="theme-color" content="aqua"/>
     <meta name="msapplication-navbutton-color" content="aqua"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="aqua"/>
